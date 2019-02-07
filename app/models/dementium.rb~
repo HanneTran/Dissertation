@@ -1,0 +1,2 @@
+class Dementium < ApplicationRecord
+end
