@@ -3,5 +3,4 @@ Rails.application.routes.draw do
   resources :patients
 
   root to: 'patients#index'
-get 'patient/index'
 end

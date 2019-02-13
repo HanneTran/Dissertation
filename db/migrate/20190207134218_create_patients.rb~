@@ -1,10 +1,15 @@
 class CreatePatients < ActiveRecord::Migration[5.2]
-  def change
+  
+  def self.up
     create_table :patients do |t|
-      t.string :name  
-      t.string :dementia
+      t.column :name, :string  
+      t.column :dementia, :string
 
-      t.timestamps
+      t.column :created_at, :timestamps
     end
   end
+
+  def self.down
+    drop_table :patients
+  end 
 end

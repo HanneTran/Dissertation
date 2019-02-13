@@ -1,8 +1,8 @@
 class CreateNotes < ActiveRecord::Migration[5.2]
   def change
     create_table :notes do |t|
-      t.text :note
-      t.timestamps
+      t.column :note , :text
+      t.column :created_at , :timestamps
     end
   end
 end
