@@ -9,7 +9,11 @@ class PatientController < ApplicationController
   def list
     @patients = Patient.all
   end
-
+  
+  def search
+    @patients  = Patient.where(name: params[:search][:name])
+    render :index
+  end
   def new
   end
 
