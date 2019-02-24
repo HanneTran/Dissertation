@@ -1,7 +1,7 @@
 class CreateDementia < ActiveRecord::Migration[5.2]
   def self.up
     def change
-      create_table :dementia do |t|
+      create_table :dem do |t|
         t.string :type, primary_key: true
     
         t.timestamps
@@ -12,6 +12,6 @@ class CreateDementia < ActiveRecord::Migration[5.2]
   end
 
   def self.down
-    drop_table :dementia
+    drop_table :dem
   end
 end 

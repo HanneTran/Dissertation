@@ -14,14 +14,17 @@ ActiveRecord::Schema.define(version: 2019_02_07_134404) do
 
   create_table "features", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "pause"
-    t.integer "integer"
     t.integer "duration"
+    t.integer "no_of_topics_changed"
+    t.integer "empty_words"
+    t.integer "variety_of_words"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "notes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "note"
+    t.integer "patientId"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
