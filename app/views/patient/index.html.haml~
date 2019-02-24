@@ -1,4 +1,9 @@
 %h1 Hello, Rails! 
 %p Find me in app/views/patients/index.html.erb 
-
+%p There are #{@patients.size} patients in the database.
+= simple_form_for :search, url: search_patients_path, method: :post do |f|
+  = f.input :name
+  = f.submit 'Search'
+  = link_to 'Reset', patients_path
+%br
 

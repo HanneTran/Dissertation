@@ -7,14 +7,7 @@ class CreateDementia < ActiveRecord::Migration[5.2]
         t.timestamps
 
       end
-    Dementium.create :type => "FMD"
-    Dementium.create :type => "DPD"
-    Dementium.create :type => "ND"
-    Dementium.create :type => "VCI"
-    Dementium.create :type => "FMD*"
-    Dementium.create :type => "MCI"
-    Dementium.create :type => "HC"
-    Dementium.create :type => "UNK"
+   
     end
   end
 

@@ -2,9 +2,9 @@ class CreateDementia < ActiveRecord::Migration[5.2]
   def self.up
     def change
       create_table :dementia do |t|
-        t.column :type, :string, primary_key: true
+        t.string :type, primary_key: true
     
-        t.column :created_at, :timestamps
+        t.timestamps
 
       end
     Dementium.create :type => "FMD"

@@ -7,3 +7,17 @@
   = link_to 'Reset', patients_path
 %br
 
+%p There are #{@patients.size} patients in the database.
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th Dementia Type
+  %tbody
+    - @patients.each do |patient|
+      %tr
+        %td= patient.name
+        %td= patient.dementia
+        %td= link_to 'Show', patient
+
+
