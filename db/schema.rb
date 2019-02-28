@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_07_134404) do
+ActiveRecord::Schema.define(version: 2019_02_28_002804) do
 
   create_table "features", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "pause"
@@ -20,20 +20,39 @@ ActiveRecord::Schema.define(version: 2019_02_07_134404) do
     t.integer "variety_of_words"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "patient_id"
+    t.index ["patient_id"], name: "index_features_on_patient_id"
   end
 
   create_table "notes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "note"
-    t.integer "patientId"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "patient_id"
+    t.index ["patient_id"], name: "index_notes_on_patient_id"
   end
 
   create_table "patients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.string "dementia"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "type_id"
+    t.index ["type_id"], name: "index_patients_on_type_id"
   end
 
+  create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "description"
+    t.bigint "patient_id"
+    t.index ["patient_id"], name: "index_questions_on_patient_id"
+  end
+
+  create_table "types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "type"
+    t.text "description"
+  end
+
+  add_foreign_key "features", "patients"
+  add_foreign_key "notes", "patients"
+  add_foreign_key "patients", "types"
+  add_foreign_key "questions", "patients"
 end

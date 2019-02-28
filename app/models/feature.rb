@@ -1,5 +1,5 @@
 class Feature < ApplicationRecord
-  belongs_to :question
-  has_one :dementium
+  belongs_to :patient
+  
 end
 
