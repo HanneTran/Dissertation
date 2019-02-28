@@ -1,0 +1,4 @@
+class Type < ApplicationRecord
+  has_many :feature
+  belongs_to :patient
+end
