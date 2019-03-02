@@ -2,7 +2,7 @@
 %p Find me in app/views/patients/index.html.erb 
 
 = simple_form_for :search, url: search_patients_path, method: :post do |f|
-  = f.input :name
+  = f.input :first_name
   = f.submit 'Search'
   = link_to 'Reset', patients_path
 %br
@@ -16,8 +16,10 @@
   %tbody
     - @patients.each do |patient|
       %tr
-        %td= patient.name
-        %td= patient.dementia
+        %td= patient.first_name
+        %td= patient.last_name
+        %td= patient.dem_type
+      
         %td= link_to 'Show', patient
 
 

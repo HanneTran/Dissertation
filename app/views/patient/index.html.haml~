@@ -1,9 +1,48 @@
 %h1 Hello, Rails! 
 %p Find me in app/views/patients/index.html.erb 
-%p There are #{@patients.size} patients in the database.
+
 = simple_form_for :search, url: search_patients_path, method: :post do |f|
-  = f.input :name
+  = f.input :first_name
   = f.submit 'Search'
   = link_to 'Reset', patients_path
 %br
+
+%p There are #{@patients.size} patients in the database.
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th Dementia Type
+  %tbody
+    - @patients.each do |patient|
+      %tr
+        %td= patient.first_name
+        %td= patient.last_name
+        %td= patient.dem_type
+      
+        %td= link_to 'Show', patient
+
+
+
+%table.table
+  %thead
+    %tr
+      %th Patient ID
+      %th Pause
+      %th Duration
+      %th No Of Topics Changed
+      %th Empty Words
+      %th Variety Of Words
+    
+  %tbody
+    - @patients.each do |feature|
+      %tr
+        %td= feature.patient_id
+        %td= feature.pause
+        %td= feature.duration
+        %td= feature.no_of_topics_changed
+        %td= feature.empty_words
+        %td= feature.variety_of_words
+      
+        %td= link_to 'Show', patient
 

@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_28_002804) do
+ActiveRecord::Schema.define(version: 2019_03_02_162002) do
 
   create_table "features", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "pause"
-    t.integer "duration"
-    t.integer "no_of_topics_changed"
-    t.integer "empty_words"
-    t.integer "variety_of_words"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "patient_id"
+    t.decimal "pause", precision: 10
+    t.decimal "duration", precision: 10
+    t.decimal "no_of_topics_changed", precision: 10
+    t.decimal "empty_words", precision: 10
+    t.decimal "variety_of_words", precision: 10
     t.index ["patient_id"], name: "index_features_on_patient_id"
   end
 
@@ -33,16 +33,19 @@ ActiveRecord::Schema.define(version: 2019_02_28_002804) do
   end
 
   create_table "patients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
+    t.string "first_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "type_id"
+    t.string "type"
+    t.string "last_name"
     t.index ["type_id"], name: "index_patients_on_type_id"
   end
 
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "description"
     t.bigint "patient_id"
+    t.integer "question_no"
     t.index ["patient_id"], name: "index_questions_on_patient_id"
   end
 
