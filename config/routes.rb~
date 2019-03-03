@@ -7,12 +7,13 @@ Rails.application.routes.draw do
   
   resources :questions
   #root to: :controller => "patient"
-  root 'patient#index'
+  root 'patients#index'
   
   resources :patients do
     post :search, on: :collection
   end
 
   resources :features
+  resources :dem_types
 #get 'patient/index'
 end

@@ -1,0 +1,18 @@
+%h1 Dementia Types
+%p Find me in app/views/categories/index.html.haml
+%p There are currently #{@categories.size} dementia types in the database.
+
+%table.table
+  %thead
+    %tr
+      %th Type ID
+      %th Dementia Type
+      %th Description
+  %tbody
+    - @categories.each do |category|
+      %tr
+        %td= category.id
+        %td= category.dem_type
+        %td= category.description
+
+

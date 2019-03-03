@@ -1,4 +1,4 @@
-class FeatureController < ApplicationController
+class FeaturesController < ApplicationController
  
     def index
      @features = Feature.all
@@ -6,6 +6,10 @@ class FeatureController < ApplicationController
   end
 def list
     @features = Feature.all
+  end
+
+  def show
+    @features = Feature.find(params[:id])
   end
 
   def create

@@ -4,13 +4,13 @@
 %table.table
   %thead
     %tr
-      %th Name
-      %th 
+      %th Question
+      %th Description
   %tbody
-    - @questions.each do |question|
+    - @question.each do |question|
       %tr
-        %td= question.question
-        
+        %td= question.question_no
+        %td= question.description
         %td= link_to 'Show', patient
 
 

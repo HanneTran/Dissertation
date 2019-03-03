@@ -1,4 +1,4 @@
-class FeatureController < ApplicationController
+class FeaturesController < ApplicationController
  
     def index
      @features = Feature.all

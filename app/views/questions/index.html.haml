@@ -1,0 +1,16 @@
+%h1 Question#index
+%p Find me in app/views/question/index.html.haml
+%p There are  questions in the database.
+%table.table
+  %thead
+    %tr
+      %th Question
+      %th Description
+  %tbody
+    - @question.each do |question|
+      %tr
+        %td= question.question_no
+        %td= question.description
+        %td= link_to 'Show', question
+
+
