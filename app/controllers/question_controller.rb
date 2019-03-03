@@ -4,6 +4,6 @@ class QuestionController < ApplicationController
   end
 
   def show
-    @question = Question.find(params[:id])
+    @question = Question.find(params[:id]) # video of the specific q should be here
   end 
 end

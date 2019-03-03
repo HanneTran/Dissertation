@@ -7,4 +7,14 @@ class FeatureController < ApplicationController
 def list
     @features = Feature.all
   end
+
+  def create
+  end  
+
+  def update
+  end
+
+  def new
+  end
+
 end

@@ -1,12 +1,12 @@
-class PatientController < ApplicationController
+class PatientsController < ApplicationController
   before_action :find_patient_from_params, only:[:edit,:update]
-
   def index
      @patients = Patient.all
   end
 
   def search
-    
+    @patients  = Patient.where(name: params[:search][:name])
+    render :index
   end
 
   def show
@@ -17,19 +17,13 @@ class PatientController < ApplicationController
     @patients = Patient.all
   end
   
-  
 
   def edit
-    
     @note = Note.all
- 
   end
   
-   
 
   def update #update method is being called after the edit method. This update the changes being made.
-    
-
     if @patient.update(patient_param)
       redirect_to :show
     else render :edit
@@ -39,7 +33,7 @@ class PatientController < ApplicationController
  
   private
     def patient_param
-    params.require(:patient).permit(:first_name, :last_name, :dem_type)
+    params.require(:patient).permit(:name, :dem_type)
     end
 
     def find_patient_from_params

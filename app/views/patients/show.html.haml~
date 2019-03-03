@@ -1,0 +1,10 @@
+%h1 Hello, Rails! 
+%p Find me in app/views/patients/show.html.haml
+%p#notice= notice
+
+%h1 {#@patient.name} 
+= @patient.name
+%p
+= @patient.dem_type
+%p
+=link_to 'Back', patients_path

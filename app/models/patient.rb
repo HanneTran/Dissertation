@@ -4,5 +4,5 @@ class Patient < ApplicationRecord
   has_one :feature
   has_one :type
   
-  validates :name, presence: true
+  validates :name, :dem_type, presence: true
 end

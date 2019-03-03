@@ -1,8 +1,8 @@
 %h1 Hello, Rails! 
-%p Find me in app/views/patients/index.html.erb 
+%p Find me in app/views/patients/index.html.haml
 
 = simple_form_for :search, url: search_patients_path, method: :post do |f|
-  = f.input :first_name
+  = f.input :name
   = f.submit 'Search'
   = link_to 'Reset', patients_path
 %br
@@ -16,10 +16,10 @@
   %tbody
     - @patients.each do |patient|
       %tr
-        %td= patient.first_name
-        %td= patient.last_name
+        %td= patient.name
+       
         %td= patient.dem_type
       
-        %td= link_to 'Show', patient
+        %td= link_to 'Show', patients_path(patient)
 
 
