@@ -15,5 +15,10 @@ Rails.application.routes.draw do
 
   resources :features
   resources :categories
+
+  namespace :charts do
+   # collection do
+      get 'features_by_category'
+    end
 #get 'patient/index'
 end

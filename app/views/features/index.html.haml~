@@ -13,7 +13,7 @@
       %th Variety Of Words
     
   %tbody
-    - @patients.each do |feature|
+    - @features.each do |feature|
       %tr
         %td= feature.patient_id
         %td= feature.pause
@@ -23,3 +23,6 @@
         %td= feature.variety_of_words
       
         %td= link_to 'Show', feature
+
+
+%p= line_chart Feature.group_by_second(:created_at).count

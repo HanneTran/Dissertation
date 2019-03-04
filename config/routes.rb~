@@ -14,6 +14,11 @@ Rails.application.routes.draw do
   end
 
   resources :features
-  resources :dem_types
+  resources :categories
+
+  resources :charts, only [] do
+    collection do
+      get 'features_by_category'
+    end
 #get 'patient/index'
 end

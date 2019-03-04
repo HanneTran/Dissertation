@@ -17,6 +17,8 @@ gem 'puma', '~> 3.11'
 gem 'simple_form'
 #gem to create JavaScript chart
 gem 'chartkick'
+#gem to get the date
+gem 'groupdate'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
