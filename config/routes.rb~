@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'note/index'
   get 'type/index'
   get 'feature/index'
@@ -16,8 +17,8 @@ Rails.application.routes.draw do
   resources :features
   resources :categories
 
-  resources :charts, only [] do
-    collection do
+  namespace :charts do
+   # collection do
       get 'features_by_category'
     end
 #get 'patient/index'

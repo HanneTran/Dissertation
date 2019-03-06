@@ -89,3 +89,5 @@ feature_list = [
 #atient_list.each do |name, type|
 #Patient.create(name: name, dementia: type)
 #end
+
+User.where(username: 'admin').first_or_create(password: 'admin1', password_confirmation: 'admin1')

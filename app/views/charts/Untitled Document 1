@@ -1,2 +1,0 @@
-%p= features_by_category
-%p= line_chart charts_features_by_category_path

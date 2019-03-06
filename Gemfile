@@ -20,6 +20,10 @@ gem 'chartkick'
 #gem to get the date
 gem 'groupdate'
 
+#gem for authentication
+gem 'devise'
+#gem for autorization
+gem 'cancancan', '~> 2.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  #devise_for :users
   get 'note/index'
   get 'type/index'
   get 'feature/index'
