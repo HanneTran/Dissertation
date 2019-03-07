@@ -12,20 +12,15 @@
 
 ActiveRecord::Schema.define(version: 2019_03_06_185404) do
 
-  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "dem_type", limit: 10, null: false
-    t.text "description", null: false
-  end
-
   create_table "features", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "patient_id", null: false
-    t.decimal "pause", precision: 10, scale: 4, null: false
-    t.decimal "duration", precision: 10, scale: 4, null: false
-    t.decimal "no_of_topics_changed", precision: 10, scale: 4, null: false
-    t.decimal "empty_words", precision: 10, scale: 4, null: false
-    t.decimal "variety_of_words", precision: 10, scale: 4, null: false
+    t.bigint "patient_id"
+    t.decimal "pause", precision: 10
+    t.decimal "duration", precision: 10
+    t.decimal "no_of_topics_changed", precision: 10
+    t.decimal "empty_words", precision: 10
+    t.decimal "variety_of_words", precision: 10
     t.index ["patient_id"], name: "index_features_on_patient_id"
   end
 
@@ -33,24 +28,30 @@ ActiveRecord::Schema.define(version: 2019_03_06_185404) do
     t.text "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "patient_id", null: false
+    t.bigint "patient_id"
     t.index ["patient_id"], name: "index_notes_on_patient_id"
   end
 
   create_table "patients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", limit: 50, null: false
+    t.string "first_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "type_id", null: false
-    t.string "dem_type", limit: 10, null: false
+    t.bigint "type_id"
+    t.string "type"
+    t.string "last_name"
     t.index ["type_id"], name: "index_patients_on_type_id"
   end
 
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "description", null: false
-    t.bigint "patient_id", null: false
-    t.integer "question_no", null: false
+    t.text "description"
+    t.bigint "patient_id"
+    t.integer "question_no"
     t.index ["patient_id"], name: "index_questions_on_patient_id"
+  end
+
+  create_table "types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "type"
+    t.text "description"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -69,6 +70,6 @@ ActiveRecord::Schema.define(version: 2019_03_06_185404) do
 
   add_foreign_key "features", "patients"
   add_foreign_key "notes", "patients"
-  add_foreign_key "patients", "categories", column: "type_id"
+  add_foreign_key "patients", "types"
   add_foreign_key "questions", "patients"
 end
