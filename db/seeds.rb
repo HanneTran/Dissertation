@@ -52,8 +52,7 @@ question_list = [
   [7,'Tell me what you did when you left school, what jobs did you do?'],
   [8,'Tell me about your last job. Given much details as you can.'],
   [9,'Who manages your finances, you or somebody else? Has it change recently?'],
-  [10,'Please name as many animals as you can. You can name any type of animal.
-     You have 1 minute. Please start after you hear the buzzer.'],
+  [10,'Please name as many animals as you can. You can name any type of animal. You have 1 minute. Please start after you hear the buzzer.'],
   [11,'Please name as many words as you can that begin with the letter p.
      It can be any any word beginning with letter p except names of people
      such as Peeta, or name of country such as Portugal.

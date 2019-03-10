@@ -2,6 +2,7 @@ class PatientsController < ApplicationController
   before_action :find_patient_from_params, only:[:edit,:update]
   def index
      @patients = Patient.all
+     @questions = Question.all
   end
 
   def search
@@ -11,10 +12,19 @@ class PatientsController < ApplicationController
 
   def show
     @patient = Patient.find(params[:id])
+    @note = Note.find(params[:id])
+    #@question = Question.find_by(patient_id: params[:id])
+    @questions = Question.all
+    @qu = Question.where(patient_id: params[:id])
+    #@category = Category.find(params[:id])
+    #@patCat = Patient.find(params[:id])
+    
   end
+
 
   def list
     @patients = Patient.all
+    @questions = Question.all
   end
   
 

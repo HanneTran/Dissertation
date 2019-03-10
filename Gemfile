@@ -20,6 +20,9 @@ gem 'chartkick'
 #gem to get the date
 gem 'groupdate'
 
+#gem to design website
+gem 'bootstrap', '~> 4.3.1'
+
 #gem for authentication
 gem 'devise'
 #gem for autorization

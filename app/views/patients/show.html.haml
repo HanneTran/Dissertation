@@ -1,8 +1,27 @@
-%h1 Hello, Rails! 
-%p Find me in app/views/patients/show.html.haml
+
 %p#notice= notice
 
 %h1 #{@patient.name} has the type #{@patient.dem_type}
 
-%p
+
+%p #{@note.note}
+
+%table.table
+  %thead
+    %tr
+      %th Question No.
+      %th Description
+      %th Patient_id
+  %tbody
+    - @qu.each do |q|
+      %tr
+        %td= q.question_no
+        %td= q.description
+        %td= q.patient_id
+        %td= link_to 'Show', q
+
 =link_to 'Back', patients_path
+
+%p= line_chart Feature.group(:pause).count
+
+

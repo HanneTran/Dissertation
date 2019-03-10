@@ -3,11 +3,11 @@ class NotesController < ApplicationController
   end
 
   def show
-    @patient = Patient.find(params[:id])
+    @note = Note.find(params[:id])
   end
   
   def edit
-    @patient = Patient.find(params[:id])
+    @note = Note.find(params[:id])
   end
 
   def update
