@@ -3,8 +3,12 @@
 
 %h1 #{@patient.name} has the type #{@patient.dem_type}
 
+=link_to 'Back', patients_path, style: 'float:right', class: 'btn btn-primary btn-md'
 
-%p #{@note.note}
+.form-group
+  .col-xs-5
+    %input.form-control.input-lg{:placeholder => "#{@note.note}", :type => "text"}/
+
 
 %table.table
   %thead
@@ -19,8 +23,6 @@
         %td= q.description
         %td= q.patient_id
         %td= link_to 'Show', q
-
-=link_to 'Back', patients_path
 
 %p= line_chart Feature.group(:pause).count
 

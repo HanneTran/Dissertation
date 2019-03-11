@@ -1,3 +1,13 @@
 // Place all the styles related to the Patient controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.search-box {
+  @include centerer;
+}

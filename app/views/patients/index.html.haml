@@ -1,12 +1,12 @@
 
-= simple_form_for :search, url: search_patients_path, method: :post do |f|
+= simple_form_for :search,style:'float:centre', url: search_patients_path, method: :post do |f|
   = f.input :name
   = f.submit 'Search'
   = link_to 'Reset', patients_path
-%br
+%br 
 
 %p There are #{@patients.size} patients in the database.
-%table.table
+%table.table.table-bordered.table-hover
   %thead
     %tr
       %th Name
