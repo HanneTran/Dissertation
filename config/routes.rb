@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'files/index'
   devise_for :users
   #devise_for :users
   get 'note/index'
