@@ -3,5 +3,5 @@
 %h1 Question #{@question.question_no}: #{@question.description}
 
 %p
-
+= video_tag "#{@vid1.file}", :size => "600x600", :controls => true
 =link_to 'Back', patients_path

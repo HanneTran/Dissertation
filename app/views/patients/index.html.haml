@@ -10,14 +10,14 @@
   %thead
     %tr
       %th Name
-      %th Dementia Type
+      %th Category
   %tbody
     - @patients.each do |patient|
       %tr
         %td= patient.name
        
-        %td= patient.dem_type
+        %td= patient.category_type
       
         %td= link_to 'Show', patient
 
-
+= video_tag "v1.mp4", :size => "600x600", :controls => true

@@ -12,12 +12,10 @@ class PatientsController < ApplicationController
 
   def show
     @patient = Patient.find(params[:id])
-    @note = Note.find(params[:id])
+    #@note = Note.find(params[:id])
     #@question = Question.find_by(patient_id: params[:id])
     @questions = Question.all
     @qu = Question.where(patient_id: params[:id])
-    #@category = Category.find(params[:id])
-    #@patCat = Patient.find(params[:id])
     
   end
 
@@ -50,3 +48,5 @@ class PatientsController < ApplicationController
     @patient = Patient.find(params[:id])
     end
 end
+    #@category = Category.find(params[:id])
+    #@patCat = Patient.find(params[:id])

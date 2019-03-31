@@ -1,13 +1,13 @@
 
 %p#notice= notice
 
-%h1 #{@patient.name} has the type #{@patient.dem_type}
+%h1 #{@patient.name} has the type #{@patient.category_type}
 
 =link_to 'Back', patients_path, style: 'float:right', class: 'btn btn-primary btn-md'
 
-.form-group
-  .col-xs-5
-    %input.form-control.input-lg{:placeholder => "#{@note.note}", :type => "text"}/
+-#.form-group
+  -#.col-xs-5
+  -#  %input.form-control.input-lg{:placeholder => "#{@note.note}", :type => "text"}/
 
 
 %table.table
