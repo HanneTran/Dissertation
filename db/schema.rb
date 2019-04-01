@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_28_153115) do
+ActiveRecord::Schema.define(version: 2019_04_01_120450) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "category", null: false
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2019_03_28_153115) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id", null: false
-    t.string "category", null: false
+    t.string "category_type", limit: 225, null: false
     t.index ["category_id"], name: "index_patients_on_type_id"
   end
 
@@ -168,9 +168,6 @@ ActiveRecord::Schema.define(version: 2019_03_28_153115) do
 
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "description"
-    t.bigint "patient_id"
-    t.integer "question_no"
-    t.index ["patient_id"], name: "index_questions_on_patient_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -214,5 +211,4 @@ ActiveRecord::Schema.define(version: 2019_03_28_153115) do
   add_foreign_key "q8s", "questions"
   add_foreign_key "q9s", "patients"
   add_foreign_key "q9s", "questions"
-  add_foreign_key "questions", "patients"
 end

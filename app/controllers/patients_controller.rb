@@ -3,6 +3,7 @@ class PatientsController < ApplicationController
   def index
      @patients = Patient.all
      @questions = Question.all
+     @q1 = Q1.find_by(patient_id: params[:id])
   end
 
   def search
@@ -16,9 +17,19 @@ class PatientsController < ApplicationController
     #@question = Question.find_by(patient_id: params[:id])
     @questions = Question.all
     @qu = Question.where(patient_id: params[:id])
+    @q1 = Patient.find(params[:id])
     
   end
-
+  
+  def question
+    @q1 = Q1.find(patient_id: params[:id])
+    @q2 = Q2.where(patient_id: params[:id])
+  end
+  
+  def select
+   @q1 = Q1.where(patient_id: params[:id])
+   @q2 = Q2.where(patient_id: params[:id])
+  end
 
   def list
     @patients = Patient.all
@@ -46,6 +57,7 @@ class PatientsController < ApplicationController
 
     def find_patient_from_params
     @patient = Patient.find(params[:id])
+    @q1 = Q1.where(patient_id: params[:id])
     end
 end
     #@category = Category.find(params[:id])

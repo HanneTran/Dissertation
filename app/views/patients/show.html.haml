@@ -3,26 +3,14 @@
 
 %h1 #{@patient.name} has the type #{@patient.category_type}
 
+=link_to 'Question', patient_questions_path(@patient) , style: 'float:centre', class: 'btn btn-primary btn-md'
+
 =link_to 'Back', patients_path, style: 'float:right', class: 'btn btn-primary btn-md'
 
 -#.form-group
   -#.col-xs-5
   -#  %input.form-control.input-lg{:placeholder => "#{@note.note}", :type => "text"}/
 
-
-%table.table
-  %thead
-    %tr
-      %th Question No.
-      %th Description
-      %th Patient_id
-  %tbody
-    - @qu.each do |q|
-      %tr
-        %td= q.question_no
-        %td= q.description
-        %td= q.patient_id
-        %td= link_to 'Show', q
 
 %p= line_chart Feature.group(:pause).count
 
