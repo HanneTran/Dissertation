@@ -2,6 +2,6 @@
 
 %h1 Question #{@question.id}: #{@question.description}
 
-%p
-= video_tag "#{@vid1.file}", :size => "600x600", :controls => true
+%p The file name: #{@q.file}, patient ID: #{@q.patient_id}, question ID #{@q.question_id}
+= video_tag "#{@q.file}", :size => "600x600", :controls => true
 =link_to 'Back', patients_path
