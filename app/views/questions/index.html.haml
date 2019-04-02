@@ -1,30 +1,15 @@
 
-%h1 Question#index
-%p Find me in app/views/question/index.html.haml
-%p There are #{@questions.size} questions in the database.
-%p This patient #{@q1s.patient_id} has question ID #{@q1s.id} and video file #{@q1s.file}
-%table.table
-  %thead
-    %tr
-      %th Question
-      %th Patient ID
-  %tbody
-    - @q1.each do |question|
-      %tr
-        %td= question.id
-        %td= question.patient_id
-
-%h1 All Questions from patient #{@q1s.patient_id}
-
+%h1 Questions from patient #{@patient.id}
+=link_to 'Back', patient_path(@patient.id), class: 'btn btn-primary btn-lg', style: 'float: right'
 
 %table.table
   %thead
     %tr
       %th Question
-      %th Patient ID
+      %th Description
   %tbody
     - @questions.each do |question|
       %tr
         %td= question.id
         %td= question.description
-        %td= link_to 'Show', patient_question_path(@q1s.patient_id, question)
+        %td= link_to 'Show', patient_question_path(@patient.id, question)

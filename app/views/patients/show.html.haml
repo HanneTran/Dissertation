@@ -1,12 +1,9 @@
-%p This page has URL: patients/:id
 
 %p#notice= notice
-
+=link_to 'Back', patients_path, style: 'float:right; margin: 20px', class: 'btn btn-primary btn-md'
 %h1 #{@patient.name} has the type #{@patient.category_type}
 
-=link_to 'Question', patient_questions_path(@patient) , style: 'float:centre', class: 'btn btn-primary btn-md'
-
-=link_to 'Back', patients_path, style: 'float:right', class: 'btn btn-primary btn-md'
+=link_to 'Question', patient_questions_path(@patient) , style: 'float:centre; margin: 20px', class: 'btn btn-primary btn-lg'
 
 -#.form-group
   -#.col-xs-5
@@ -19,5 +16,5 @@
 %h1 Test another form
 
 = form_for([@patient, @note]) do |n|
-  =n.text_area :note , style: "font-size: 25px; height: 200px; width: 80% "
-  =n.submit
+  =n.text_area :note , style: "font-size: 25px; height: 200px; margin: 20px; width: 80% "
+  =n.submit  class: 'btn btn-primary btn-lg', style: 'margin: 20px'

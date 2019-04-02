@@ -1,12 +1,13 @@
 
-= simple_form_for :search,style:'float:centre', url: search_patients_path, method: :post do |f|
-  = f.input :name
-  = f.submit 'Search'
-  = link_to 'Reset', patients_path
-%br 
+.col-xs-5
+  = simple_form_for :search, url: search_patients_path, method: :post do |f|
+    = f.input :name, label: 'Search by name:'
+    = f.submit 'Search', class: 'btn btn-primary btn-md'
+    = link_to 'Reset', patients_path
+  %br 
 
 %p There are #{@patients.size} patients in the database.
-%table.table.table-bordered.table-hover
+%table.table.table-hover
   %thead
     %tr
       %th Name
@@ -20,4 +21,4 @@
       
         %td= link_to 'Show', patient
 
-= video_tag "v1.mp4", :size => "600x600", :controls => true
+-#= video_tag "v1.mp4", :size => "600x600", :controls => true

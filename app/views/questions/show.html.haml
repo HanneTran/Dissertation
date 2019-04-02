@@ -1,7 +1,8 @@
 %p#notice= notice
 
 %h1 Question #{@question.id}: #{@question.description}
-
+%div{:align => "center"}
 %p The file name: #{@q.file}, patient ID: #{@q.patient_id}, question ID #{@q.question_id}
-= video_tag "#{@q.file}", :size => "600x600", :controls => true
-=link_to 'Back', patients_path
+.video
+  = video_tag "#{@q.file}", :size => "600x600", :controls => true, :style => "float: left; margin-left: 100px"
+=link_to 'Back', patient_questions_path, class: 'btn btn-primary btn-lg'
