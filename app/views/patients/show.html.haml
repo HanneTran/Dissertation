@@ -1,3 +1,4 @@
+%p This page has URL: patients/:id
 
 %p#notice= notice
 
@@ -9,9 +10,14 @@
 
 -#.form-group
   -#.col-xs-5
-  -#  %input.form-control.input-lg{:placeholder => "#{@note.note}", :type => "text"}/
+    -#%input.form-control.input-lg{:placeholder => "#{@note.note}", :type => "text"}/
 
 
 %p= line_chart Feature.group(:pause).count
+-#=link_to 'Edit', edit_patient_note_path(@patient.id, @note.id), class: 'btn btn-primary btn-md'
 
+%h1 Test another form
 
+= form_for([@patient, @note]) do |n|
+  =n.text_area :note , style: "font-size: 25px; height: 200px; width: 80% "
+  =n.submit

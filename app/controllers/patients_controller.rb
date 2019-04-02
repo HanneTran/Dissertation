@@ -13,7 +13,7 @@ class PatientsController < ApplicationController
 
   def show
     @patient = Patient.find(params[:id])
-    #@note = Note.find(params[:id])
+    @note = Note.find_by(patient_id: params[:id])
     #@question = Question.find_by(patient_id: params[:id])
     @questions = Question.all
     @qu = Question.where(patient_id: params[:id])
@@ -38,7 +38,7 @@ class PatientsController < ApplicationController
   
 
   def edit
-    @note = Note.all
+    @note = Note.find(params[:id])
   end
   
 

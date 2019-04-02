@@ -15,11 +15,13 @@ Rails.application.routes.draw do
   #resources :questions
   #root to: :controller => "patient"
   root 'patients#index'
-  
+  resources :notes
   resources :patients do
     post :search, on: :collection
     resources :questions
+    resources :notes
   end
+  
 
   resources :features
   resources :categories

@@ -1,0 +1,15 @@
+%h1 Note#index
+%p Find me in app/views/note/edit.html.haml
+%h1 Edit Note for patient ID #{@note.patient_id}
+%p The page URL: patients/patient_id/notes/:id/edit
+
+= simple_form_for(@patient, html: {class: 'form-inline'}) do |n|
+  = n.input :name
+  =n.submit
+
+
+
+%h1 Test another form
+= form_for([@patient, @note]) do |n|
+  =n.text_area :note
+  =n.submit
