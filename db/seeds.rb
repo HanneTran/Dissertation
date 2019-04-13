@@ -19,15 +19,15 @@
 
 # string :name, string :type, bigint :type_id
 patient_list = [
-  ['Dave', 0],  #FMD should subtitute with type_id?
-  ['Penny', 1],
-  ['Annie', 0],
+  ['Dave', NOW(), NOW(), 4,'HC'],  #FMD should subtitute with type_id?
+  ['Penny', NOW(), NOW(), 3,'MCI'],
+  ['Annie', NOW(), NOW(), 3,'MCI'],
   #['Harry', 'FMD'],
   #['Liam', 'FMD'],
   #['Jake', 'ND'],
-  ['Mimi', 2],
+  ['Mimi',  NOW(), NOW(), 4,'HC'],
   #['Daisy', 'MCI'],
-  ['Louise', 3]
+  ['Louise', NOW(), NOW(), 1,'FMD']
   #['Simon', 'HC'],
   #['Lori', 'ND'],
   #['Luke', 'FMD']
@@ -53,9 +53,7 @@ question_list = [
   [8,'Tell me about your last job. Given much details as you can.'],
   [9,'Who manages your finances, you or somebody else? Has it change recently?'],
   [10,'Please name as many animals as you can. You can name any type of animal. You have 1 minute. Please start after you hear the buzzer.'],
-  [11,'Please name as many words as you can that begin with the letter p.
-     It can be any any word beginning with letter p except names of people
-     such as Peeta, or name of country such as Portugal.
+  [11,'Please name as many words as you can that begin with the letter p. It can be any any word beginning with letter p except names of people such as Peeta, or name of country such as Portugal.
      Please start answering after you hear the buzzer.'],
   [12,'Please describe this picture in as much details as you can. When you finish press forward.']
 
@@ -83,10 +81,18 @@ feature_list = [
   [2, 0.0395, 0.3954, 0.3, 0.1, 1.15], #9
   [3, 0.1114, 0.4796, 0.4286, 0.2143, 2.5], #11
   [4, 1.2771, 0.675, 0.4286, 2.7143, 14.7143] #53
+  [5, 1.7257, 0.73, 0.7143, 0.4286, 1.7143] ,#40
+  [6, 0.8083, 0.6297, 0.8333, 3,9.6667], #49
+  [7, 9.245, 0.4944, 1, 58.5,200], #60
+
+  [8, 3.6738, 0.6606, 0.0472, 0.5,3.6038], #24
+  [9, 0.4619 , 0.8274, 0.1429, 0.5, 1.2381], #15
+  [10, 0.5331, 0.4061, 0.2308, 0.3077, 4.2308] #14
+
 ]
 
 #atient_list.each do |name, type|
 #Patient.create(name: name, dementia: type)
 #end
 
-User.where(username: 'admin').first_or_create(password: 'admin1', password_confirmation: 'admin1')
+#User.where(username: 'admin').first_or_create(password: 'admin1', password_confirmation: 'admin1')

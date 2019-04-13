@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_01_120450) do
+ActiveRecord::Schema.define(version: 2019_04_13_113313) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "category", null: false
@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(version: 2019_04_01_120450) do
   end
 
   create_table "notes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "note"
+    t.text "note", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "patient_id"
+    t.bigint "patient_id", null: false
     t.index ["patient_id"], name: "index_notes_on_patient_id"
   end
 
@@ -166,6 +166,14 @@ ActiveRecord::Schema.define(version: 2019_04_01_120450) do
     t.index ["question_id"], name: "index_q9s_on_question_id"
   end
 
+  create_table "qs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "file"
+    t.bigint "patient_id"
+    t.bigint "question_id"
+    t.index ["patient_id"], name: "index_all_questions_on_patient_id"
+    t.index ["question_id"], name: "index_all_questions_on_question_id"
+  end
+
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "description"
   end
@@ -178,7 +186,7 @@ ActiveRecord::Schema.define(version: 2019_04_01_120450) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "username"
+    t.string "username", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
@@ -211,4 +219,6 @@ ActiveRecord::Schema.define(version: 2019_04_01_120450) do
   add_foreign_key "q8s", "questions"
   add_foreign_key "q9s", "patients"
   add_foreign_key "q9s", "questions"
+  add_foreign_key "qs", "patients"
+  add_foreign_key "qs", "questions"
 end

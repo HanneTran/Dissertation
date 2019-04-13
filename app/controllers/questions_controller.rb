@@ -9,14 +9,7 @@ class QuestionsController < ApplicationController
     #@patient = Question.where(patient_id: params[:id])
     #@q= Q1.find_by(patient_id: params[:patient_id])
     @vid1= Q1.find_by(patient_id: params[:id])
-    print "HEEEEEEELLLLOOOOOOOOOOO  PARAMS[:ID] PRINT BELOW"
-    print params[:id]
-    if (params[:id] == '1')
-      @q = Q1.find_by(patient_id: params[:patient_id])
-      print "YAAAAAS QUESTION 1 "
-    else (params[:id] == '2')
-      print "NOOOOOOOOOOOO question 1"
-    end
-    #if question_id = 1 use table Q1.
+    @t = Q.find_by(patient_id: params[:patient_id],question_id: params[:id])
+   
   end 
 end

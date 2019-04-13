@@ -1,3 +1,4 @@
+require 'histogram/array'
 class PatientsController < ApplicationController
   before_action :find_patient_from_params, only:[:edit,:update]
   def index
@@ -18,6 +19,11 @@ class PatientsController < ApplicationController
     @questions = Question.all
     @qu = Question.where(patient_id: params[:id])
     @q1 = Patient.find(params[:id])
+    @ps = Patient.all
+    @data = [1,1,1,2,2,2,2,2,3,4,4,5,5,4,3,5]
+    (bins, freqs) = @data.histogram
+    @s= @data.histogram
+   
     
   end
   

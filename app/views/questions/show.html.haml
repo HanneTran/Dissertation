@@ -2,7 +2,7 @@
 
 %h1 Question #{@question.id}: #{@question.description}
 %div{:align => "center"}
-%p The file name: #{@q.file}, patient ID: #{@q.patient_id}, question ID #{@q.question_id}
+%p The file name: #{@t.file}, patient ID: #{@t.patient_id}, question ID #{@t.question_id}
 .video
-  = video_tag "#{@q.file}", :size => "600x600", :controls => true, :style => "float: left; margin-left: 100px"
+  = video_tag "#{@t.file}", :size => "600x600", :controls => true, :style => "float: left; margin-left: 100px"
 =link_to 'Back', patient_questions_path, class: 'btn btn-primary btn-lg'

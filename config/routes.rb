@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     resources :notes
   end
   
-
+  resources :qs
   resources :features
   resources :categories
 

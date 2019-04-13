@@ -1,4 +1,9 @@
+= javascript_include_tag "https://www.gstatic.com/charts/loeader.js" 
 
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/histogram-bellcurve.js"></script>
+<div id="container"></div> 
 %p#notice= notice
 =link_to 'Back', patients_path, style: 'float:right; margin: 20px', class: 'btn btn-primary btn-md'
 %h1 #{@patient.name} has the type #{@patient.category_type}
@@ -12,6 +17,11 @@
 
 %p= line_chart Feature.group(:pause).count
 -#=link_to 'Edit', edit_patient_note_path(@patient.id, @note.id), class: 'btn btn-primary btn-md'
+
+
+= @data = [1,1,1,2,2,2,2,2,3,4,4,5,5,4,3,5]
+=    (bins, freqs) = @data.histogram
+=    @s= @data.histogram
 
 %h1 Test another form
 

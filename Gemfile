@@ -20,6 +20,8 @@ gem 'chartkick'
 #gem to get the date
 gem 'groupdate'
 
+gem 'histogram'
+
 #gem to design website
 #gem 'bootstrap', '~> 4.3.1'
 gem 'bootstrap-sass'
