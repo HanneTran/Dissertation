@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'pages/home'
   get 'files/index'
   devise_for :users
   #devise_for :users
@@ -14,7 +15,7 @@ Rails.application.routes.draw do
   
   #resources :questions
   #root to: :controller => "patient"
-  root 'patients#index'
+  root to: 'pages#home'
   resources :notes
   resources :patients do
     post :search, on: :collection

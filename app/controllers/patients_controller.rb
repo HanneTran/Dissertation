@@ -1,5 +1,6 @@
 require 'histogram/array'
 class PatientsController < ApplicationController
+  before_action :authenticate_user!
   before_action :find_patient_from_params, only:[:edit,:update]
   def index
      @patients = Patient.all
