@@ -1,7 +1,7 @@
 %h1 Login Page
 %p#notice= notice
 - if current_user
-  = link_to 'Sign out', destroy_user_session_path, method: :delete
+  = link_to 'View patients', patients_path, class: 'btn btn-primary btn-md'
 - else
   = link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary btn-md'
   = link_to 'Sign in', new_user_session_path, class: 'btn btn-primary btn-md'

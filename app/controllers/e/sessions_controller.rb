@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 class E::SessionsController < Devise::SessionsController
-  # before_action :configure_sign_in_params, only: [:create]
+   before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
    def new
-     render patients_path
+     redirect_to patients_path
    end
 
   # POST /resource/sign_in
