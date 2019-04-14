@@ -22,6 +22,8 @@ gem 'groupdate'
 
 gem 'histogram'
 
+#gem to create charts using Google API and Ruby
+gem 'googlecharts' 
 #gem to design website
 #gem 'bootstrap', '~> 4.3.1'
 gem 'bootstrap-sass'

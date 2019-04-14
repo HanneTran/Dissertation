@@ -13,13 +13,12 @@
 =link_to 'Details', patient_detail_path(@patient) , style: 'float:centre; margin: 20px', class: 'btn btn-primary btn-lg'
 
 
-
 %ul.nav.nav-tabs
-  %li.active
+  %li
     %a{:href => patient_path(@patient.id)} Pause
   %li
     %a{:href => patient_duration_path(@patient.id)} Duration
-  %li
+  %li.active
     %a{:href => patient_notop_path(@patient.id)} No of topics changed
   %li
     %a{:href => patient_empt_path(@patient.id)} Empty words
@@ -27,9 +26,7 @@
     %a{:href => patient_variety_path(@patient.id)} Variety of words
 
 %br
-
-= scatter_chart Feature.pluck(:pause, :patient_id), xtitle: "pause", ytitle: "patient's id"
-
+= scatter_chart Feature.pluck(:no_of_topics_changed, :patient_id), xtitle: "no of topics changed", ytitle: "patient's id"
 
 
 -#.form-group
@@ -39,15 +36,16 @@
 
 -#=link_to 'Edit', edit_patient_note_path(@patient.id, @note.id), class: 'btn btn-primary btn-md'
 
+%br
 
 
 = form_for([@patient, @note]) do |n|
   =n.text_area :note , style: "font-size: 25px; height: 200px; margin: 20px; width: 80% "
   =n.submit  class: 'btn btn-primary btn-lg', style: 'margin: 20px'
 
--#= area_chart Feature.group(:pause).maximum(:patient_id) 
+-# area_chart Feature.group(:pause).maximum(:patient_id) 
 -#= scatter_chart Feature.pluck(:pause, :patient_id), xtitle: "pause", ytitle: "patient's id"
--#= scatter_chart Feature.pluck(:pause, :patient_id), xtitle: "pause", ytitle: "patient's id", -#colors: ["#666"]
+-#= scatter_chart Feature.pluck(:pause, :patient_id), xtitle: "pause", ytitle: "patient's id", colors: ["#666"]
 
 
 

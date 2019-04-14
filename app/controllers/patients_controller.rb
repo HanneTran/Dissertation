@@ -15,6 +15,8 @@ class PatientsController < ApplicationController
 
   def show
     @patient = Patient.find(params[:id])
+    @patf = Feature.all
+    @a = @patf
     @note = Note.find_by(patient_id: params[:id])
     #@question = Question.find_by(patient_id: params[:id])
     @questions = Question.all
@@ -24,9 +26,10 @@ class PatientsController < ApplicationController
     @data = [1,1,1,2,2,2,2,2,3,4,4,5,5,4,3,5]
     (bins, freqs) = @data.histogram
     @s= @data.histogram
-   
+    @d = Gchart.line(:data => [1,1,1,2,2,2,2,2,3,4,4,5,5,4,3,5], :axis_with_labels => ['x','y'])
     
   end
+  
   
   def question
     @q1 = Q1.find(patient_id: params[:id])
@@ -43,9 +46,14 @@ class PatientsController < ApplicationController
     @questions = Question.all
   end
   
+  def detail
+    @patient = Patient.find(params[:patient_id])
+  end
+  
 
   def edit
     @note = Note.find(params[:id])
+    @patient = Patient.find(params[:id])
   end
   
 

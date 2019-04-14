@@ -1,0 +1,17 @@
+
+%p#notice= notice
+=link_to 'Back', patient_path(@patient.id), style: 'float:right; margin: 20px', class: 'btn btn-primary btn-md'
+
+%table.table.table-bordered
+  %thead
+    %tr 
+      %th Name:   
+      %th Category type: 
+      %th Category id: 
+      %th Patient id: 
+  %tbody
+    %tr
+      %td #{@patient.name}
+      %td #{@patient.category_type}
+      %td #{@patient.category_id}
+      %td #{@patient.id} 
