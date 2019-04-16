@@ -39,7 +39,7 @@
 
 -#=link_to 'Edit', edit_patient_note_path(@patient.id, @note.id), class: 'btn btn-primary btn-md'
 
-
+%br
 
 = form_for([@patient, @note]) do |n|
   =n.text_area :note , style: "font-size: 25px; height: 200px; margin: 20px; width: 80% "

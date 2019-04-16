@@ -43,7 +43,7 @@
   =n.text_area :note , style: "font-size: 25px; height: 200px; margin: 20px; width: 80% "
   =n.submit  class: 'btn btn-primary btn-lg', style: 'margin: 20px'
 
--# area_chart Feature.group(:pause).maximum(:patient_id) 
+-#= area_chart Feature.group(:empty_words).maximum(:patient_id) 
 -#= scatter_chart Feature.pluck(:pause, :patient_id), xtitle: "pause", ytitle: "patient's id"
 -#= scatter_chart Feature.pluck(:pause, :patient_id), xtitle: "pause", ytitle: "patient's id", colors: ["#666"]
 
