@@ -21,7 +21,7 @@ Running the application:
 
 1. To run the application all the information above needs to be followed. Ruby version needs to be 2.5.3 and Rails version 5.2.2. mySql must be installed and have a username called root with root as the password. 
 
-2. Open the command line, redirect to the Project folder and type in "Bundle install" to install all the gems that has been used on the application.
+2. Open the command line, redirect to the Project folder and type in "Bundle install" to install all the gems that has been used on the application. Then type "rails db:migrate".
 
 3. To run the server, type "Rails s", and open Google Chrome if, possible as this shows the video files (Firefox does not show the videos). Type "localhost:3000" or "http://www.localhost:3000" on the URL.
 
