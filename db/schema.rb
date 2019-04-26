@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_13_154338) do
+ActiveRecord::Schema.define(version: 2019_04_26_111115) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "category", null: false
@@ -46,126 +46,6 @@ ActiveRecord::Schema.define(version: 2019_04_13_154338) do
     t.index ["category_id"], name: "index_patients_on_type_id"
   end
 
-  create_table "q10s", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "file"
-    t.bigint "patient_id"
-    t.bigint "question_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["patient_id"], name: "index_q10s_on_patient_id"
-    t.index ["question_id"], name: "index_q10s_on_question_id"
-  end
-
-  create_table "q11s", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "file"
-    t.bigint "patient_id"
-    t.bigint "question_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["patient_id"], name: "index_q11s_on_patient_id"
-    t.index ["question_id"], name: "index_q11s_on_question_id"
-  end
-
-  create_table "q12s", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "file"
-    t.bigint "patient_id"
-    t.bigint "question_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["patient_id"], name: "index_q12s_on_patient_id"
-    t.index ["question_id"], name: "index_q12s_on_question_id"
-  end
-
-  create_table "q1s", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "file"
-    t.bigint "patient_id"
-    t.bigint "question_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["patient_id"], name: "index_q1s_on_patient_id"
-    t.index ["question_id"], name: "index_q1s_on_question_id"
-  end
-
-  create_table "q2s", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "file"
-    t.bigint "patient_id"
-    t.bigint "question_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["patient_id"], name: "index_q2s_on_patient_id"
-    t.index ["question_id"], name: "index_q2s_on_question_id"
-  end
-
-  create_table "q3s", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "file"
-    t.bigint "patient_id"
-    t.bigint "question_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["patient_id"], name: "index_q3s_on_patient_id"
-    t.index ["question_id"], name: "index_q3s_on_question_id"
-  end
-
-  create_table "q4s", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "file"
-    t.bigint "patient_id"
-    t.bigint "question_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["patient_id"], name: "index_q4s_on_patient_id"
-    t.index ["question_id"], name: "index_q4s_on_question_id"
-  end
-
-  create_table "q5s", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "file"
-    t.bigint "patient_id"
-    t.bigint "question_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["patient_id"], name: "index_q5s_on_patient_id"
-    t.index ["question_id"], name: "index_q5s_on_question_id"
-  end
-
-  create_table "q6s", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "file"
-    t.bigint "patient_id"
-    t.bigint "question_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["patient_id"], name: "index_q6s_on_patient_id"
-    t.index ["question_id"], name: "index_q6s_on_question_id"
-  end
-
-  create_table "q7s", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "file"
-    t.bigint "patient_id"
-    t.bigint "question_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["patient_id"], name: "index_q7s_on_patient_id"
-    t.index ["question_id"], name: "index_q7s_on_question_id"
-  end
-
-  create_table "q8s", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "file"
-    t.bigint "patient_id"
-    t.bigint "question_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["patient_id"], name: "index_q8s_on_patient_id"
-    t.index ["question_id"], name: "index_q8s_on_question_id"
-  end
-
-  create_table "q9s", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "file"
-    t.bigint "patient_id"
-    t.bigint "question_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["patient_id"], name: "index_q9s_on_patient_id"
-    t.index ["question_id"], name: "index_q9s_on_question_id"
-  end
-
   create_table "qs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "file"
     t.bigint "patient_id"
@@ -194,30 +74,6 @@ ActiveRecord::Schema.define(version: 2019_04_13_154338) do
   add_foreign_key "features", "patients"
   add_foreign_key "notes", "patients"
   add_foreign_key "patients", "categories"
-  add_foreign_key "q10s", "patients"
-  add_foreign_key "q10s", "questions"
-  add_foreign_key "q11s", "patients"
-  add_foreign_key "q11s", "questions"
-  add_foreign_key "q12s", "patients"
-  add_foreign_key "q12s", "questions"
-  add_foreign_key "q1s", "patients"
-  add_foreign_key "q1s", "questions"
-  add_foreign_key "q2s", "patients"
-  add_foreign_key "q2s", "questions"
-  add_foreign_key "q3s", "patients"
-  add_foreign_key "q3s", "questions"
-  add_foreign_key "q4s", "patients"
-  add_foreign_key "q4s", "questions"
-  add_foreign_key "q5s", "patients"
-  add_foreign_key "q5s", "questions"
-  add_foreign_key "q6s", "patients"
-  add_foreign_key "q6s", "questions"
-  add_foreign_key "q7s", "patients"
-  add_foreign_key "q7s", "questions"
-  add_foreign_key "q8s", "patients"
-  add_foreign_key "q8s", "questions"
-  add_foreign_key "q9s", "patients"
-  add_foreign_key "q9s", "questions"
   add_foreign_key "qs", "patients"
   add_foreign_key "qs", "questions"
 end
