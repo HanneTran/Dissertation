@@ -1,3 +1,7 @@
+# Author: Hanne Tran
+# Date: 20.04.19
+# The different actions in category pages. 
+
 class CategoriesController < ApplicationController
   def index
     @categories = Category.all 

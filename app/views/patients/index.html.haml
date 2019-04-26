@@ -1,6 +1,7 @@
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="patients.js"></script>
-<div id="container"></div> 
+-# Author: Hanne Tran
+-# Date: 20.04.19 
+-# Page with search box and list of all patients in the system.
+
 
 .col-xs-5
   = simple_form_for :search, url: search_patients_path, method: :post do |f|
@@ -19,11 +20,7 @@
     - @patients.each do |patient|
       %tr
         %td= patient.name
-       
         %td= patient.category_type
-      
         %td= link_to 'Show', patient
-
--#= video_tag "v1.mp4", :size => "600x600", :controls => true
 
 

@@ -1,2 +1,0 @@
-%p= features_by_category
-%p= line_chart @patients.features.group(:pause).sum(:dem_type)

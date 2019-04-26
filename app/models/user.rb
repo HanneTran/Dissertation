@@ -1,3 +1,5 @@
+# Author: Hanne Tran
+# Date: 20.04.19
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

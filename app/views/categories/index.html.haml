@@ -1,18 +1,21 @@
-%h1 Dementia Types
-%p Find me in app/views/categories/index.html.haml
-%p There are currently #{@categories.size} dementia types in the database.
+-# Author: Hanne Tran
+-# Date: 20.04.19 
+-# This page is not used in the system.
+
+%h1 Diagnostic classes
+%p There are currently #{@categories.size} categories in the database.
 
 %table.table
   %thead
     %tr
       %th Type ID
-      %th Dementia Type
+      %th Category
       %th Description
   %tbody
     - @categories.each do |category|
       %tr
         %td= category.id
-        %td= category.dem_type
+        %td= category.category
         %td= category.description
 
 

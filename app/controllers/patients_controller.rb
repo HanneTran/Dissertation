@@ -1,51 +1,36 @@
-require 'histogram/array'
+# Author: Hanne Tran
+# Date: 20.04.19
+# Method index, search, show, detail has been completed.
+
 class PatientsController < ApplicationController
+  # Checks if a user has an account, before giving access to the system.
   before_action :authenticate_user!
   before_action :find_patient_from_params, only:[:edit,:update]
+  
   def index
      @patients = Patient.all
      @questions = Question.all
-     @q1 = Q1.find_by(patient_id: params[:id])
   end
-
+  
+  # search for a patient with a name.
   def search
     @patients  = Patient.where(name: params[:search][:name])
     render :index
   end
 
+  # @patient show patient with the id from the URL path.
+  # @note show the note from the patient with the id from URL path.
   def show
     @patient = Patient.find(params[:id])
-    @patf = Feature.all
-    @a = @patf
     @note = Note.find_by(patient_id: params[:id])
-    #@question = Question.find_by(patient_id: params[:id])
-    @questions = Question.all
-    @qu = Question.where(patient_id: params[:id])
-    @q1 = Patient.find(params[:id])
-    @ps = Patient.all
-    @data = [1,1,1,2,2,2,2,2,3,4,4,5,5,4,3,5]
-    (bins, freqs) = @data.histogram
-    @s= @data.histogram
-    @d = Gchart.line(:data => [1,1,1,2,2,2,2,2,3,4,4,5,5,4,3,5], :axis_with_labels => ['x','y'])
-    
   end
   
-  
-  def question
-    @q1 = Q1.find(patient_id: params[:id])
-    @q2 = Q2.where(patient_id: params[:id])
-  end
-  
-  def select
-   @q1 = Q1.where(patient_id: params[:id])
-   @q2 = Q2.where(patient_id: params[:id])
-  end
-
   def list
     @patients = Patient.all
     @questions = Question.all
   end
   
+  # show the details of a patient.
   def detail
     @patient = Patient.find(params[:patient_id])
   end
@@ -56,15 +41,15 @@ class PatientsController < ApplicationController
     @patient = Patient.find(params[:id])
   end
   
-
-  def update #update method is being called after the edit method. This update the changes being made.
+  #update method is being called after the edit method. This update the changes being made.
+  def update 
     if @patient.update(patient_param)
       redirect_to :show
     else render :edit
     end
   end
 
- 
+  # private methods
   private
     def patient_param
     params.require(:patient).permit(:name, :dem_type)
@@ -72,8 +57,6 @@ class PatientsController < ApplicationController
 
     def find_patient_from_params
     @patient = Patient.find(params[:id])
-    @q1 = Q1.where(patient_id: params[:id])
     end
 end
-    #@category = Category.find(params[:id])
-    #@patCat = Patient.find(params[:id])
+   

@@ -1,9 +1,7 @@
-= javascript_include_tag "https://www.gstatic.com/charts/loeader.js" 
+-# Author: Hanne Tran
+-# Date: 20.04.19 
+-# Dashboard with variety of words graph   
 
-
-<script src="https://www.gstatic.com/charts/loader.js"></script>     
-
-%p#notice= notice
 =link_to 'Back', patients_path, style: 'float:right; margin: 20px', class: 'btn btn-primary btn-md'
 %h1 #{@patient.name} has patient id #{@patient.id}
 
@@ -28,14 +26,6 @@
 %br
 = scatter_chart Feature.pluck(:variety_of_words, :patient_id), xtitle: "variety of words", ytitle: "patient's id"
 
-
--#.form-group
-  -#.col-xs-5
-    -#%input.form-control.input-lg{:placeholder => "#{@note.note}", :type => "text"}/
-
-
--#=link_to 'Edit', edit_patient_note_path(@patient.id, @note.id), class: 'btn btn-primary btn-md'
-
 %br
 
 
@@ -43,9 +33,6 @@
   =n.text_area :note , style: "font-size: 25px; height: 200px; margin: 20px; width: 80% "
   =n.submit  class: 'btn btn-primary btn-lg', style: 'margin: 20px'
 
--# = area_chart Feature.group(:variety_of_words).maximum(:patient_id) 
--#= scatter_chart Feature.pluck(:pause, :patient_id), xtitle: "pause", ytitle: "patient's id"
--#= scatter_chart Feature.pluck(:pause, :patient_id), xtitle: "pause", ytitle: "patient's id", colors: ["#666"]
 
 
 

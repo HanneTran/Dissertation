@@ -1,5 +1,9 @@
+-# Author: Hanne Tran
+-# Date: 20.04.19 
+-# Home page
+
 %h1 Login Page
-%p#notice= notice
+
 - if current_user
   = link_to 'View patients', patients_path, class: 'btn btn-primary btn-md'
 - else

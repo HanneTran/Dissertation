@@ -1,3 +1,7 @@
+# Author: Hanne Tran
+# Date: 20.04.19
+# Checks if a user is logged in.
+
 class ApplicationController < ActionController::Base
 before_action :configure_permitted_parameters, if: :devise_controller?
  protected

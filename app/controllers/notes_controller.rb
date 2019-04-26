@@ -1,7 +1,7 @@
+# Author: Hanne Tran
+# Date: 20.04.19
 class NotesController < ApplicationController
-  def index
-  end
-
+  
   def show
     @note = Note.find(params[:id])
   end
@@ -21,12 +21,7 @@ class NotesController < ApplicationController
    end
   end
 
-  def create
-  end 
-
-  
   def note_params
     params.require(:note).permit(:id, :note, :patient_id)
   end
- 
 end
