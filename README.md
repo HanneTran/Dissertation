@@ -4,7 +4,7 @@ The video files are stored in app/assets/videos. The file that controls the styl
 
 The folder e has been created by Devise and store all controllers needed to sign in, sign out and sign up a user, which is stored in app/controllers/e. Devise also created view files in app/views/devise. 
 
-app/controllers stores all controllers and app/models store the models/tables from the database. app/views stores HTML/HAML files of web pages of the controllers.
+app/controllers stores all controllers and app/models store the models/tables from the database. app/views stores HTML/HAML files of web pages of the controllers. In this folder the features and notes folder are not being used in the system.
 
 In db folder, the migration files, schema.rb and seeds.rb are stored. Seeds.rb has not been used when adding data into the database. The data has been added by using mySQL on the command line. 
 
