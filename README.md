@@ -22,17 +22,13 @@ Running the application:
 
 * Database information: username root, password root (need to be identical as database.yml file)
 
-1. To run the application all the information above needs to be followed. Ruby version needs to be 2.5.3 and Rails version 5.2.3. mySql must be installed and have a username called root with root as the password. Then type "rake db:create" to create the mysql database.
+1. To run the application all the information above needs to be followed. Ruby version needs to be 2.5.3 and Rails version 5.2.3. MySql must be installed and have a username called root with root as the password. Then open the command line, redirect to the Project folder and type "rake db:create" to create the mysql database.
 
-2. Open the command line, redirect to the Project folder and type in "Bundle install" to install all the gems that has been used on the application. Then type "rails db:migrate" and "rake db:seed" to seed the data from the seeds.rb file.
+2. Type in "Bundle install" to install all the gems that has been used on the application. Then type "rails db:migrate" and "rake db:seed" to create the tables in the database and seed the data from the seeds.rb file.
 
-3. To run the server, type "Rails s", and open Google Chrome if, possible as this shows the video files (Firefox does not show the videos). Type "localhost:3000" or "http://www.localhost:3000" on the URL.
+3. To run the server, type "Rails s" in the command line, and open Google Chrome if possible as this shows the video files (Firefox does not show the videos). Type "localhost:3000" or "http://www.localhost:3000" on the URL.
 
-4. Click on "Sign in", then sign in with email: "admin@admin.com" and password: "password".
-
-
-
-NB. All the data has been created in local database and can therefore not be transferred. The system might therefore be empty and would not be able to test.
+4. Click on "Sign in", then sign in with email: "admin@admin.com" and password: "password". It should be possible to access the system and view the patients' data that was created in the seeds.rb file.
 
 
 
