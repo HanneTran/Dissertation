@@ -8,7 +8,7 @@ app/controllers stores all controllers and app/models store the models/tables fr
 
 In db folder, the migration files, schema.rb and seeds.rb are stored. Seeds.rb has not been used when adding data into the database. The data has been added by using mySQL on the command line. 
 
-In the application, Q table is Questions table on Figure 8 in the report, and Questions table is Qdetails table on Figure 8. 
+In the application, Q table is Questions table on Figure 4.1 in the report, and Questions table is Qdetails table on Figure 4.1. 
 
 
 
